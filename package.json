@@ -1,0 +1,49 @@
+{
+  "name": "@functorfactory/eslint-config",
+  "version": "0.0.1",
+  "description": "ESLint config for Functor Factory projects",
+  "main": "eslint.config.js",
+  "type": "module",
+  "scripts": {
+    "update-version": "changeset version && pnpm install --no-frozen-lockfile",
+    "format": "prettier . --write",
+    "lint": "ESLINT_USER_FLAT_CONFIG=true eslint --fix"
+  },
+  "prettier": "@functorfactory/prettier-config",
+  "packageManager": "pnpm@8.10.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FunctorFactory/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FunctorFactory/eslint-config/issues"
+  },
+  "homepage": "https://github.com/FunctorFactory/eslint-config",
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "author": "Jake Shilling <shilling.jake@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@functorfactory/prettier-config": "^0.0.2",
+    "eslint": "^8.53.0",
+    "prettier": "^3.1.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.53.0",
+    "prettier": "^3.1.0"
+  },
+  "dependencies": {
+    "@eslint/js": "^8.53.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-jsdoc": "^46.9.0",
+    "eslint-plugin-prettier": "^5.0.1"
+  }
+}
