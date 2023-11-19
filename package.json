@@ -32,7 +32,8 @@
     "@changesets/cli": "^2.26.2",
     "@functorfactory/prettier-config": "^0.0.2",
     "eslint": "^8.53.0",
-    "prettier": "^3.1.0"
+    "prettier": "^3.1.0",
+    "typescript-language-server": "^4.1.2"
   },
   "peerDependencies": {
     "eslint": "^8.53.0",
@@ -43,7 +44,14 @@
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-formatter-github": "^1.1.4",
+    "eslint-plugin-functional": "^6.0.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-jest-extended": "^2.0.0",
+    "eslint-plugin-jest-formatting": "^3.1.0",
     "eslint-plugin-jsdoc": "^46.9.0",
+    "eslint-plugin-lodash": "^7.4.0",
+    "eslint-plugin-lodash-fp": "2.2.0-a1",
     "eslint-plugin-prettier": "^5.0.1"
   }
 }
