@@ -1,6 +1,6 @@
 {
   "name": "@functorfactory/eslint-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ESLint config for Functor Factory projects",
   "main": "eslint.config.js",
   "type": "module",
