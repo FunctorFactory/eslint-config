@@ -1,5 +1,11 @@
 # @functorfactory/eslint-config
 
+## 0.0.4
+
+### Patch Changes
+
+- ab17ebc: FIX errors that came up when using this in an actual project
+
 ## 0.0.3
 
 - 1355518: Add LICENSE
