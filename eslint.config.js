@@ -2,26 +2,16 @@ import js from '@eslint/js';
 import jsdoc from 'eslint-plugin-jsdoc';
 import prettier from 'eslint-plugin-prettier';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import lodash from 'eslint-plugin-lodash';
-import lodashFp from 'eslint-plugin-lodash-fp';
 import functional from 'eslint-plugin-functional';
 import jest from 'eslint-plugin-jest';
 import jestExtended from 'eslint-plugin-jest-extended';
 import jestFormat from 'eslint-plugin-jest-formatting';
-
-import path from 'path';
-
-import { FlatCompat } from '@eslint/eslintrc';
-import { fileURLToPath } from 'url';
-
-// This is needed for configs that don't support the Flat Config system
-// yet. @see
-// https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+import ts from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import impt from 'eslint-plugin-import';
+import importSort from 'eslint-plugin-simple-import-sort';
+import keysSort from 'eslint-plugin-sort-destructure-keys';
+import codegen from 'eslint-plugin-codegen';
 
 const JAVASCRIPT_COMMONJS = ['**/*.cjs'];
 const JSX = ['**/*.jsx'];
@@ -45,21 +35,6 @@ export default [
       '.changeset',
     ],
   },
-  // Prettier
-  {
-    files: [
-      '**/*.js',
-      '**/*.mjs',
-      '**/*.cjs',
-      '**/*.jsx',
-      '**/*.ts',
-      '**/*.tsx',
-    ],
-    plugins: {
-      prettier,
-    },
-    ...eslintConfigPrettier,
-  },
   // Recommended JS
   {
     files: ALL_JAVASCRIPT,
@@ -68,15 +43,20 @@ export default [
   // Recommended TS
   {
     files: ALL_TYPESCRIPT,
-    ...compat.config({
-      extends: [
-        'plugin:@typescript-eslint/recommended-type-checked',
-        'plugin:@typescript-eslint/stylistic-type-checked',
-      ],
-      plugins: ['@typescript-eslint'],
-      parser: '@typescript-eslint/parser',
-      rules: {
-        '@typescript-eslint/no-explicit-any': 'off',
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: true,
+      }
+    },
+    plugins: {
+      '@typescript-eslint': ts,
+    },
+    rules: {
+      ...ts.configs['eslint-recommended'].rules,
+      ...ts.configs['recommended-type-checked'].rules,
+      ...ts.configs['stylistic-type-checked'].rules,
+      '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/no-unused-vars': [
           1,
@@ -87,8 +67,7 @@ export default [
             varsIgnorePattern: '^_',
           },
         ],
-      },
-    }),
+    },
   },
   // JSDoc
   {
@@ -105,20 +84,39 @@ export default [
     },
     ...jsdoc.configs['flat/recommended-typescript'],
   },
-  // Lodash
+  // Import
   {
     files: [...ALL_JAVASCRIPT, ...ALL_TYPESCRIPT],
-    plugins: {
-      lodash,
-      lodashFp,
+    plugins: { import: impt },
+    settings: {
+      'import/resolver': {
+        typescript: true,
+        node: true,
+      }
     },
-    ...lodash.configs.recommended,
-    ...lodashFp.configs.recommended,
+    rules: {
+      ...impt.configs.recommended.rules,
+    },
+  },
+  {
+    files: [...ALL_JAVASCRIPT, ...ALL_TYPESCRIPT],
+    plugins: { 'simple-import-sort': importSort },
+    rules: {
+      'simple-import-sort/imports': "error",
+      'simple-import-sort/exports': "error",
+    },
+  },
+  {
+    files: [...ALL_JAVASCRIPT, ...ALL_TYPESCRIPT],
+    plugins: { 'sort-destructure-keys': keysSort },
+    rules: {
+      'sort-destructure-keys/sort-destructure-keys': "error",
+    },
   },
   // Functional
   {
     files: [...ALL_JAVASCRIPT, ...ALL_TYPESCRIPT],
-    ignorePatterns: TEST_FILES,
+    ignores: TEST_FILES,
     plugins: {
       functional,
     },
@@ -126,7 +124,7 @@ export default [
   },
   {
     files: ALL_TYPESCRIPT,
-    ignorePatterns: TEST_FILES,
+    ignores: TEST_FILES,
     ...functional.configs['external-typescript-recommended'],
     ...functional.configs.stylistic,
     rules: {
@@ -156,5 +154,24 @@ export default [
       jestFormat,
     },
     ...jestFormat.configs.recommended,
+  },
+  {
+    files: [...ALL_JAVASCRIPT, ...ALL_TYPESCRIPT, '**/.*md'],
+    plugins: {
+      codegen
+    },
+    rules: {
+      'codegen/codegen': 'error',
+    }
+  },
+  {
+    files: [...ALL_JAVASCRIPT, ...ALL_TYPESCRIPT],
+    plugins: {
+      prettier
+    },
+    rules: {
+      ...eslintConfigPrettier.rules,
+      'prettier/prettier': 'error',
+    }
   },
 ];
