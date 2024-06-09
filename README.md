@@ -55,24 +55,12 @@ pnpm add -D @functorfactory/eslint-config eslint
 
 ## Usage
 
-To use this configuration, add it to your `extends` field
+In `eslint.config.js`:
 
-```json
-{
-  ...
-  "extends": "@functorfactory/prettier-config"
-  ...
-}
-```
+```javascript
+import getConfig from '@functorfactory/config';
 
-You can also add it to your flat config 
-
-``` javascript
-import config from '@functorfactory/config';
-
-export default [
-  ...config,
-]
+export default getConfig(import.meta.dirname);
 ```
 
 ## License
