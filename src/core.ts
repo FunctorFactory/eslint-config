@@ -6,6 +6,10 @@ import tseslint from 'typescript-eslint';
 import { Config } from './config.js';
 import { ALL_JAVASCRIPT, ALL_TYPESCRIPT } from './fileExtensions.js';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+const imprtPlg: TSESLint.Linter.Plugin = importPlugin;
+const recommended = imprtPlg.configs.recommended;
+
 export const getConfig = (
   config: Readonly<Config>,
 ): TSESLint.FlatConfig.ConfigArray => [
@@ -35,10 +39,10 @@ export const getConfig = (
       },
     },
     plugins: {
-      import: importPlugin,
+      import: imprtPlg,
     },
     rules: {
-      ...importPlugin.configs.recommended.rules,
+      ...recommended.rules,
       'import/no-deprecated': 'error',
       'import/no-extraneous-dependencies': 'error',
       'import/no-cycle': 'error',

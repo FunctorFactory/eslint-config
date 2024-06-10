@@ -1,5 +1,4 @@
 import { ESLint } from 'eslint';
-import { ESLintRules } from 'eslint/rules';
 
 declare module 'eslint-plugin-import' {
   type ConfigKeys =
