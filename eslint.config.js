@@ -1,2 +1,9 @@
 import getConfig from './dist/index.js';
-export default getConfig(import.meta.dirname);
+
+const config = getConfig({
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+});
+
+export default config;
