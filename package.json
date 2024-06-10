@@ -16,6 +16,11 @@
     }
   },
   "type": "module",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "update-version": "changeset version && pnpm install --no-frozen-lockfile",
     "build": "tsup",
