@@ -1,5 +1,15 @@
 # @functorfactory/eslint-config
 
+## 0.1.0
+
+### Minor Changes
+
+- 72de375: Re-implement core configuration in TypeScript
+
+### Patch Changes
+
+- 72de375: Use Nix Flake to manage development environment
+
 ## 0.0.4
 
 ### Patch Changes
