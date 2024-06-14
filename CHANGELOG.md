@@ -1,5 +1,11 @@
 # @functorfactory/eslint-config
 
+## 0.2.1
+
+### Patch Changes
+
+- acb2fdb: Add prepare script to build before publishing
+
 ## 0.2.0
 
 ### Minor Changes
