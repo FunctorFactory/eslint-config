@@ -2,7 +2,7 @@
   "name": "@functorfactory/eslint-config",
   "version": "0.2.0",
   "description": "ESLint config for Functor Factory projects",
-  "main": "./dist.index.cjs",
+  "main": "./dist/index.cjs",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -22,6 +22,8 @@
     "README.md"
   ],
   "scripts": {
+    "prepare": "pnpm run clean && pnpm run build",
+    "clean": "rimraf dist .tsbuildinfo",
     "update-version": "changeset version && pnpm install --no-frozen-lockfile",
     "build": "tsup",
     "check": "tsc -b tsconfig.json",
