@@ -1,5 +1,13 @@
 # @functorfactory/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- f068cab: Switch from eslint-plugin-import to eslint-plugin-import-x and
+  remove the `getConfig` now that tseslint does not need the project
+  file.
+
 ## 0.2.1
 
 ### Patch Changes
