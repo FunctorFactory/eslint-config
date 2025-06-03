@@ -1,9 +1,3 @@
-import getConfig from './dist/index.js';
+import * as config from './dist/index.js';
 
-const config = getConfig({
-  parserOptions: {
-    project: './tsconfig.json',
-  },
-});
-
-export default config;
+export default config.Config;

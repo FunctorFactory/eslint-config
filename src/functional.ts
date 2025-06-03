@@ -1,32 +1,31 @@
-import { TSESLint } from '@typescript-eslint/utils';
-import functional from 'eslint-plugin-functional/flat';
+import functional from 'eslint-plugin-functional';
+import * as tseslint from 'typescript-eslint';
 
 import { ALL_JAVASCRIPT, ALL_TYPESCRIPT } from './fileExtensions.js';
 
-const CommonConfig: TSESLint.FlatConfig.ConfigArray = [
-  functional.configs.recommended,
-  functional.configs.externalVanillaRecommended,
-].map((conf) => ({
-  ...conf,
-  files: [...ALL_JAVASCRIPT, ...ALL_TYPESCRIPT],
-}));
-
-const JSConfig: TSESLint.FlatConfig.ConfigArray = [
-  {
-    files: ALL_JAVASCRIPT,
-    ...functional.configs.disableTypeChecked,
-  },
-];
-
-const TSConfig: TSESLint.FlatConfig.ConfigArray = [
+export const Config = tseslint.config(
   {
     files: ALL_TYPESCRIPT,
-    ...functional.configs.externalTypescriptRecommended,
+    extends: [
+      functional.configs.externalVanillaRecommended,
+      functional.configs.externalTypeScriptRecommended,
+      functional.configs.recommended,
+    ],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        projectService: true,
+      },
+    },
   },
-];
+  {
+    files: ALL_JAVASCRIPT,
+    extends: [
+      functional.configs.externalVanillaRecommended,
+      functional.configs.recommended,
+      functional.configs.disableTypeChecked,
+    ],
+  },
+);
 
-export const Config: TSESLint.FlatConfig.ConfigArray = [
-  ...CommonConfig,
-  ...JSConfig,
-  ...TSConfig,
-];
+export default Config;
