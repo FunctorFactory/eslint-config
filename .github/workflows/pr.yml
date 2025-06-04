@@ -2,6 +2,7 @@ name: Verify PR
 
 on:
   pull_request:
+    types: [opened, synchronized, reopened]
   workflow_dispatch:
 
 jobs:
@@ -10,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: 'lts'
+        node-version: ['lts/*', 'latest']
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -20,6 +21,7 @@ jobs:
         with:
           cache: pnpm
           node-version: ${{ matrix.node-version }}
+          check-latest: true
       - run: pnpm install
       - run: pnpm build
       - run: pnpm check
