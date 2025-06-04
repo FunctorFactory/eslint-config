@@ -5,6 +5,7 @@ on:
     types: [opened, synchronized, reopened]
   workflow_dispatch:
 
+
 jobs:
   verify:
     name: Lint and Test
