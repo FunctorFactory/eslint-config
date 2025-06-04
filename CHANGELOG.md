@@ -1,5 +1,11 @@
 # @functorfactory/eslint-config
 
+## 0.3.1
+
+### Patch Changes
+
+- 0c6db34: Enable dependabot version updates
+
 ## 0.3.0
 
 ### Minor Changes
