@@ -3,6 +3,7 @@ name: Add changeset to Dependabot updates
 on:
   pull_request_target:
     types: [opened, synchronize, labeled]
+  workflow_dispatch:
 
 jobs:
   dependabot:
@@ -19,7 +20,7 @@ jobs:
       - name: Update PR
         uses: StafflinePeoplePlus/dependabot-changesets@v0.1.0
         with:
-          owner: MyGithubUser
-          repo: my-cool-repo
+          owner: @functorfactory
+          repo: eslint-config
           pr-number: ${{ github.event.pull_request.number }}
-          token: ${{ secrets.CHANGESET_GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}

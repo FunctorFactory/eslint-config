@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'tsup.config.ts'
+      - 'src/**.ts'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
