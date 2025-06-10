@@ -1,5 +1,11 @@
 # @functorfactory/eslint-config
 
+## 0.3.3
+
+### Patch Changes
+
+- c9c64a6: Bump eslint-import-resolver-typescript from 4.4.2 to 4.4.3
+
 ## 0.3.2
 
 ### Patch Changes
