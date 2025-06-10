@@ -58,9 +58,14 @@ pnpm add -D @functorfactory/eslint-config eslint
 In `eslint.config.js`:
 
 ```javascript
-import getConfig from '@functorfactory/config';
+import * as config from '@functorfactory/eslint-config';
 
-export default getConfig(import.meta.dirname);
+export const Config = [
+  ...config.Config,
+  /* Add any overrides */
+];
+
+export default Config;
 ```
 
 ## License
