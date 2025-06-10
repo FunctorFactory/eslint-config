@@ -1,5 +1,5 @@
-import eslint from '@eslint/js';
 import * as tseslint from 'typescript-eslint';
+import eslint from '@eslint/js';
 
 import { ALL_TYPESCRIPT } from './fileExtensions.js';
 
@@ -20,10 +20,26 @@ export const Config = tseslint.config(
   tseslint.configs.recommended,
   tseslint.configs.stylistic,
   {
-    files: ALL_TYPESCRIPT,
     extends: [
       tseslint.configs.recommendedTypeChecked,
       tseslint.configs.stylisticTypeChecked,
     ],
+    files: ALL_TYPESCRIPT,
+  },
+  {
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          destructuredArrayIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          args: 'all',
+        },
+      ],
+    },
   },
 );
