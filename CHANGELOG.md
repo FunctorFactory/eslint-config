@@ -1,5 +1,13 @@
 # @functorfactory/eslint-config
 
+## 0.3.2
+
+### Patch Changes
+
+- 9e44630: Add perfectionist plugin for sorting
+- 10ec4d7: Add linting to PRs
+- 9e44630: Disable certain functional rules in JSX/TSX files
+
 ## 0.3.1
 
 ### Patch Changes
