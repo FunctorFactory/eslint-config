@@ -20,7 +20,7 @@ jobs:
       - name: Update PR
         uses: StafflinePeoplePlus/dependabot-changesets@v0.1.0
         with:
-          owner: @functorfactory
+          owner: "@functorfactory"
           repo: eslint-config
           pr-number: ${{ github.event.pull_request.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
