@@ -55,7 +55,7 @@ importers:
         version: 4.14.0(eslint@9.28.0)(typescript@5.8.3)
       eslint-plugin-prettier:
         specifier: ^5.4.1
-        version: 5.4.1(@types/eslint@8.56.10)(eslint-config-prettier@10.1.5(eslint@9.28.0))(eslint@9.28.0)(prettier@3.5.3)
+        version: 5.4.1(@types/eslint@8.56.10)(eslint-config-prettier@10.1.5(eslint@9.28.0))(eslint@9.28.0)(prettier@3.6.2)
       eslint-plugin-sort-destructure-keys:
         specifier: ^2.0.0
         version: 2.0.0(eslint@9.28.0)
@@ -68,7 +68,7 @@ importers:
         version: 2.29.4
       '@functorfactory/prettier-config':
         specifier: ^0.0.3
-        version: 0.0.3(prettier@3.5.3)
+        version: 0.0.3(prettier@3.6.2)
       '@swc/core':
         specifier: ^1.11.29
         version: 1.11.29
@@ -83,7 +83,7 @@ importers:
         version: 9.28.0
       prettier:
         specifier: ^3.5.3
-        version: 3.5.3
+        version: 3.6.2
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -2374,8 +2374,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2509,6 +2509,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   spawndamnit@3.0.1:
     resolution: {integrity: sha512-MmnduQUuHCoFckZoWnXsTg7JaiLBJrKFj9UI2MbRPGaJeVpsLcVBu6P/IGZovziM/YBsellCmsprgNA+w0CzVg==}
@@ -3278,9 +3279,9 @@ snapshots:
       '@eslint/core': 0.15.1
       levn: 0.4.1
 
-  '@functorfactory/prettier-config@0.0.3(prettier@3.5.3)':
+  '@functorfactory/prettier-config@0.0.3(prettier@3.6.2)':
     dependencies:
-      prettier: 3.5.3
+      prettier: 3.6.2
 
   '@humanfs/core@0.19.1': {}
 
@@ -4349,10 +4350,10 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-prettier@5.4.1(@types/eslint@8.56.10)(eslint-config-prettier@10.1.5(eslint@9.28.0))(eslint@9.28.0)(prettier@3.5.3):
+  eslint-plugin-prettier@5.4.1(@types/eslint@8.56.10)(eslint-config-prettier@10.1.5(eslint@9.28.0))(eslint@9.28.0)(prettier@3.6.2):
     dependencies:
       eslint: 9.28.0
-      prettier: 3.5.3
+      prettier: 3.6.2
       prettier-linter-helpers: 1.0.0
       synckit: 0.11.8
     optionalDependencies:
@@ -5157,7 +5158,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.5.3: {}
+  prettier@3.6.2: {}
 
   pretty-format@29.7.0:
     dependencies:
