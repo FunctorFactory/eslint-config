@@ -9,6 +9,13 @@ export const Config = tseslint.config(
     files: ALL_JAVASCRIPT,
   },
   {
+    settings: {
+      'import-x/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+        },
+      },
+    },
     extends: [importX.flatConfigs.recommended, importX.flatConfigs.typescript],
     files: ALL_TYPESCRIPT,
   },

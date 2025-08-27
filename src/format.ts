@@ -1,6 +1,7 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 import prettier from 'eslint-plugin-prettier/recommended';
 import perfectionist from 'eslint-plugin-perfectionist';
-import { TSESLint } from '@typescript-eslint/utils';
 
 import { ALL_JAVASCRIPT, ALL_TYPESCRIPT } from './fileExtensions.js';
 

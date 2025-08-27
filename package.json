@@ -33,7 +33,7 @@
     "lint:fix": "pnpm run build && eslint . --fix"
   },
   "prettier": "@functorfactory/prettier-config",
-  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
+  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b",
   "publishConfig": {
     "access": "public"
   },
@@ -49,42 +49,40 @@
     "eslint",
     "eslint-config"
   ],
-  "author": "Jake Shilling <shilling.jake@gmail.com>",
+  "author": "Jake Shilling <jshilling@functorfactory.com>",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@changesets/cli": "^2.29.4",
-    "@functorfactory/prettier-config": "^0.0.3",
-    "@swc/core": "^1.11.29",
+    "@changesets/cli": "^2.29.6",
+    "@functorfactory/prettier-config": "^0.1.0",
+    "@swc/core": "^1.13.5",
     "@types/eslint__js": "^9.14.0",
-    "@types/node": "^22.15.29",
-    "eslint": "^9.28.0",
-    "prettier": "^3.5.3",
+    "@types/node": "^24.3.0",
+    "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
     "tsup": "^8.5.0",
-    "typescript": "^5.8.3",
-    "typescript-language-server": "^4.3.4"
+    "typescript": "^5.9.2",
+    "typescript-language-server": "^4.4.0"
   },
   "peerDependencies": {
-    "eslint": "^8.57.0"
+    "eslint": "^9.34.0"
   },
   "dependencies": {
-    "@eslint/js": "^9.28.0",
-    "@typescript-eslint/eslint-plugin": "^8.33.1",
-    "@typescript-eslint/parser": "^8.33.1",
-    "@typescript-eslint/utils": "^8.33.1",
-    "eslint-config-prettier": "^10.1.5",
+    "@eslint/js": "^9.34.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "@typescript-eslint/utils": "^8.41.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-formatter-github": "^1.1.4",
-    "eslint-import-resolver-typescript": "^4.4.2",
-    "eslint-plugin-codegen": "^0.31.0",
-    "eslint-plugin-functional": "^9.0.2",
-    "eslint-plugin-import-x": "^4.15.0",
-    "eslint-plugin-jest": "^28.12.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-codegen": "^0.33.0",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-jest": "^29.0.1",
     "eslint-plugin-jest-extended": "^3.0.0",
     "eslint-plugin-jest-formatting": "^3.1.0",
-    "eslint-plugin-jsdoc": "^50.7.1",
-    "eslint-plugin-perfectionist": "^4.14.0",
-    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-jsdoc": "^54.1.1",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-sort-destructure-keys": "^2.0.0",
-    "typescript-eslint": "^8.33.1"
+    "typescript-eslint": "^8.41.0"
   }
 }

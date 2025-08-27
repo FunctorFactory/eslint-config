@@ -1,4 +1,5 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
+
 import jsdoc from 'eslint-plugin-jsdoc';
 
 import {
