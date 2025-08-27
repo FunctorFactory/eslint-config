@@ -1,5 +1,24 @@
 # @functorfactory/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- cc2d246: Remove Functional plugin
+
+### Patch Changes
+
+- 0f6d788: Bump @babel/helpers from 7.23.2 to 7.27.6
+- 0f6d788: Bump @babel/runtime from 7.23.2 to 7.27.6
+- 28fb21a: Bump @eslint/plugin-kit from 0.3.1 to 0.3.3 in the npm_and_yarn group
+- 84c0b0a: Bump StafflinePeoplePlus/dependabot-changesets from 0.1.0 to 0.1.5
+- e0dca1f: Bump actions/checkout from 3 to 5
+- 0f6d788: Bump brace-expansion from 1.1.11 to 1.1.12
+- 0f6d788: Bump braces from 3.0.2 to 3.0.3
+- 0f6d788: Bump cross-spawn from 6.0.5 to 6.0.6
+- cc2d246: Update dependency versions
+- 0f6d788: Bump micromatch from 4.0.5 to 4.0.8
+
 ## 0.3.3
 
 ### Patch Changes
