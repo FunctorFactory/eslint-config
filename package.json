@@ -52,10 +52,10 @@
   "author": "Jake Shilling <jshilling@functorfactory.com>",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "@babel/helpers": "^7.28.3",
     "@changesets/cli": "^2.29.6",
     "@functorfactory/prettier-config": "^0.1.0",
     "@swc/core": "^1.13.5",
-    "@types/eslint__js": "^9.14.0",
     "@types/node": "^24.3.0",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
