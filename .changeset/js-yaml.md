@@ -1,0 +1,5 @@
+---
+"eslint-config": patch
+---
+
+Bump js-yaml from 3.14.1 to 3.14.2 in the npm_and_yarn group across 1 directory
